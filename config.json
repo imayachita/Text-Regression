@@ -1,0 +1,18 @@
+{
+    "maxlen" : 72,
+    "model_type" : "BILSTM",
+    "batch_size" : 128,
+    "epochs" : 30,
+    "word_embedding": "./data/glove.6B.300d.txt",
+    "max_number_of_examples_per_class": "None",
+    "stopwords_file" : "./data/stopwords.txt",
+    "train_file" : "None",
+    "eval_file" : "./data/eval.csv",
+    "predict_file" : "None",
+    "input_column" : "features",
+    "target_column" : "continuous_target_1",
+    "model_dir" : "./model",
+    "do_train" : "False",
+    "do_eval" : "True",
+    "do_predict" : "False"
+}
