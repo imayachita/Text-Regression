@@ -127,12 +127,12 @@ Example to do prediction only:
 }
 ```
 
-Extra Notes:
-	1. The script will automatically split the data to train and validation set (stratified 20%) for training.
-	2. If "do_train" is "True", training will be performed and there will be evaluation done on test data which is obtained from stratified 20% of training data ("train_file"). This evaluation result will be saved in 'Evaluation_Report_on_Training.txt'
-	3. If "do_eval" is also "True", there will be another evaluation done on evaluation data ("eval_file"). In order to do this, provide the evaluation dataset in "eval_file". Evaluation result will be saved in 'Evaluation_Report_on_Eval_Data.txt' and 'Evaluation_Results.csv'. If you don't have additional data to do evaluation, just set this flag to "False".
-	4. If you want to do evaluation without training, set "do_train" to "False" and "do_eval" to "True". Provide the evaluation dataset in "eval_file". 
-	5. If you want to do prediction, set "do_predict" to "True". Provide the file to predict in "predict_file".Result will be saved in 'Prediction_Results.csv'.
+Extra Notes: <br>
+	1. The script will automatically split the data to train and validation set (stratified 20%) for training. <br>
+	2. If ```do_train``` is ```True```, training will be performed and there will be evaluation done on test data which is obtained from stratified 20% of training data (```train_file```). This evaluation result will be saved in ```Evaluation_Report_on_Training.txt```. <br>
+	3. If ```do_eval``` is also ```True```, there will be another evaluation done on evaluation data (```eval_file```). In order to do this, provide the evaluation dataset in ```eval_file```. Evaluation result will be saved in ```Evaluation_Report_on_Eval_Data.txt``` and ```Evaluation_Results.csv```. If you don't have additional data to do evaluation, just set this flag to ```False```. <br>
+	4. If you want to do evaluation without training, set ```do_train``` to ```False``` and ```do_eval``` to ```True```. Provide the evaluation dataset in ```eval_file```. <br>
+	5. If you want to do prediction, set ```do_predict``` to ```True```. Provide the file to predict in ```predict_file```. Result will be saved in ```Prediction_Results.csv```. <br>
 
 
 5. Run the main script
@@ -146,15 +146,15 @@ python3 main.py -c config.json
 
 
 Additional Notes:
-1. Tensorboard events file that show training and eval loss, MAE, and MSE are saved in model directory.
-To load: 
+1. Tensorboard events file that show training and eval loss, MAE, and MSE are saved in model directory. <br>
+To load: <br>
 ```
 tensorboard --logdir=[events_file_directory]
 ```
 
-2. Uncertainty measurement is implemented by setting Dropout layer Training to True in model architecture. The uncertainty measurement will be done on evaluation dataset when "do_eval" is set to "True". The result will be shown as Mean and Standard Deviation for each prediction. The uncertainty is measured 50 different predictions on each example.
+2. Uncertainty measurement is implemented by setting Dropout layer Training to True in model architecture. The uncertainty measurement will be done on evaluation dataset when "do_eval" is set to "True". The result will be shown as Mean and Standard Deviation for each prediction. The uncertainty is measured 50 different predictions on each example. <br>
 
-**Citation**
-This model uncertainty measurement implementation is based on these blogs:
-https://www.depends-on-the-definition.com/model-uncertainty-in-deep-learning-with-monte-carlo-dropout/
+**Citation** <br>
+This model uncertainty measurement implementation is based on these blogs: <br>
+https://www.depends-on-the-definition.com/model-uncertainty-in-deep-learning-with-monte-carlo-dropout/ <br>
 https://medium.com/comet-ml/estimating-uncertainty-in-machine-learning-models-part-2-8711c832cc15
